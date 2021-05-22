@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  token_divisa: MyString
+  nombre_divisa: MyString
+  valor: 1.5
+  simbolo: MyString
+
+two:
+  token_divisa: MyString
+  nombre_divisa: MyString
+  valor: 1.5
+  simbolo: MyString
