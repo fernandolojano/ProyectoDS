@@ -64,6 +64,6 @@ class BalanceCriptomonedasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def balance_criptomoneda_params
-      params.require(:balance_criptomoneda).permit(:valor, :usuario, :criptomoneda_id)
+      params.require(:balance_criptomoneda).permit(:valor, :usuario, :token_criptomoneda)
     end
 end

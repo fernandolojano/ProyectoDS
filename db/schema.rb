@@ -12,22 +12,24 @@
 
 ActiveRecord::Schema.define(version: 2021_05_22_174800) do
 
-  create_table "balance_criptomonedas", primary_key: ["token_criptomoneda", "usuario_id"], charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "balance_criptomonedas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "valor"
-    t.string "token_criptomoneda", null: false
-    t.bigint "usuario_id", null: false
+    t.string "token_criptomoneda"
+    t.bigint "usuario_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["token_criptomoneda"], name: "fk_rails_67fe9cbf3b"
     t.index ["usuario_id"], name: "fk_rails_da88b03415"
   end
 
-  create_table "balance_divisas", primary_key: ["usuario_id", "token_divisa"], charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "balance_divisas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "valor"
-    t.bigint "usuario_id", null: false
-    t.string "token_divisa", null: false
+    t.bigint "usuario_id"
+    t.string "token_divisa"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["token_divisa"], name: "fk_rails_2940c3d9e5"
+    t.index ["usuario_id"], name: "fk_rails_9d84575976"
   end
 
   create_table "criptomonedas", primary_key: "token_criptomoneda", id: :string, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -53,12 +55,13 @@ ActiveRecord::Schema.define(version: 2021_05_22_174800) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "valor_historicos", primary_key: ["token_criptomoneda", "fecha"], charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.datetime "fecha", null: false
+  create_table "valor_historicos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "fecha"
     t.float "valor"
-    t.string "token_criptomoneda", null: false
+    t.string "token_criptomoneda"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["token_criptomoneda"], name: "fk_rails_d0d73d66e9"
   end
 
   add_foreign_key "balance_criptomonedas", "criptomonedas", column: "token_criptomoneda", primary_key: "token_criptomoneda"
