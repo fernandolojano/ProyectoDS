@@ -12,36 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2021_05_22_144315) do
 
-  create_table "criptomonedas", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "token_criptomoneda"
+  create_table "criptomonedas", primary_key: "token_criptomoneda", id: :string, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nombre"
     t.float "valor_actual"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "developers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.string "surname"
-    t.bigint "project_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_developers_on_project_id"
-  end
-
-  create_table "divisas", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "token_divisa"
+  create_table "divisas", primary_key: "token_divisa", id: :string, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nombre_divisa"
     t.float "valor"
     t.string "simbolo"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.integer "team"
-    t.text "info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -54,5 +35,4 @@ ActiveRecord::Schema.define(version: 2021_05_22_144315) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "developers", "projects"
 end
