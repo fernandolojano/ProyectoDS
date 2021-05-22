@@ -14,6 +14,7 @@
   <tbody>
     <% @valor_historicos.each do |valor_historico| %>
       <tr>
+        <td><%= valor_historico.token_criptomoneda %></td>
         <td><%= valor_historico.fecha %></td>
         <td><%= valor_historico.valor %></td>
         <td><%= link_to 'Show', valor_historico %></td>

@@ -14,6 +14,8 @@
     <% @balance_divisas.each do |balance_divisa| %>
       <tr>
         <td><%= balance_divisa.valor %></td>
+        <td><%= balance_divisa.usuario_id %></td>
+        <td><%= balance_divisa.token_divisa %></td>
         <td><%= link_to 'Show', balance_divisa %></td>
         <td><%= link_to 'Edit', edit_balance_divisa_path(balance_divisa) %></td>
         <td><%= link_to 'Destroy', balance_divisa, method: :delete, data: { confirm: 'Are you sure?' } %></td>

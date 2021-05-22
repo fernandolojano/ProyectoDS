@@ -7,12 +7,12 @@
 
 <p>
   <strong>Usuario:</strong>
-  <%= @balance_criptomoneda.usuario %>
+  <%= @balance_criptomoneda.usuario_id %>
 </p>
 
 <p>
   <strong>Criptomoneda:</strong>
-  <%= @balance_criptomoneda.criptomoneda_id %>
+  <%= @balance_criptomoneda.token_criptomoneda %>
 </p>
 
 <%= link_to 'Edit', edit_balance_criptomoneda_path(@balance_criptomoneda) %> |
