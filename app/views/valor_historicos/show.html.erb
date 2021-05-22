@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @valor_historico.fecha %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @valor_historico.valor %>
+</p>
+
+<%= link_to 'Edit', edit_valor_historico_path(@valor_historico) %> |
+<%= link_to 'Back', valor_historicos_path %>

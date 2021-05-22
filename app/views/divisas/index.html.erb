@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Divisas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Token divisa</th>
+      <th>Nombre divisa</th>
+      <th>Valor</th>
+      <th>Simbolo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @divisas.each do |divisa| %>
+      <tr>
+        <td><%= divisa.token_divisa %></td>
+        <td><%= divisa.nombre_divisa %></td>
+        <td><%= divisa.valor %></td>
+        <td><%= divisa.simbolo %></td>
+        <td><%= link_to 'Show', divisa %></td>
+        <td><%= link_to 'Edit', edit_divisa_path(divisa) %></td>
+        <td><%= link_to 'Destroy', divisa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Divisa', new_divisa_path %>

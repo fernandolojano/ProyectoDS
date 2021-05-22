@@ -1,0 +1,32 @@
+<%= form_with(model: balance_criptomoneda) do |form| %>
+  <% if balance_criptomoneda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(balance_criptomoneda.errors.count, "error") %> prohibited this balance_criptomoneda from being saved:</h2>
+
+      <ul>
+        <% balance_criptomoneda.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.text_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usuario %>
+    <%= form.text_field :usuario %>
+  </div>
+
+  <div class="field">
+    <%= form.label :criptomoneda_id %>
+    <%= form.text_field :criptomoneda_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

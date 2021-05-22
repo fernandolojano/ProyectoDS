@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @balance_criptomoneda.valor %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @balance_criptomoneda.usuario %>
+</p>
+
+<p>
+  <strong>Criptomoneda:</strong>
+  <%= @balance_criptomoneda.criptomoneda_id %>
+</p>
+
+<%= link_to 'Edit', edit_balance_criptomoneda_path(@balance_criptomoneda) %> |
+<%= link_to 'Back', balance_criptomonedas_path %>

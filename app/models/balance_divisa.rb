@@ -1,0 +1,2 @@
+class BalanceDivisa < ApplicationRecord
+end

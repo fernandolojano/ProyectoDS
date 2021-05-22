@@ -1,0 +1,2 @@
+module ValorHistoricosHelper
+end

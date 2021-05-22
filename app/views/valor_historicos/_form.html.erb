@@ -1,0 +1,27 @@
+<%= form_with(model: valor_historico) do |form| %>
+  <% if valor_historico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(valor_historico.errors.count, "error") %> prohibited this valor_historico from being saved:</h2>
+
+      <ul>
+        <% valor_historico.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.datetime_select :fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.text_field :valor %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
