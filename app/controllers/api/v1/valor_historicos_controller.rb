@@ -6,7 +6,7 @@ class ValorHistoricosController < ApplicationController
 
   # GET /valor_historicos
   def index
-    @valor_historicos = ValorHistorico.all
+    @valor_historicos = ValorHistorico.all.order('fecha DESC')
 
     render json: @valor_historicos
   end

@@ -6,7 +6,7 @@ class DivisasController < ApplicationController
 
   # GET /divisas
   def index
-    @divisas = Divisa.all
+    @divisas = Divisa.all.order('valor')
 
     render json: @divisas
   end

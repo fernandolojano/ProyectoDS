@@ -6,7 +6,7 @@ class BalanceCriptomonedasController < ApplicationController
 
   # GET /balance_criptomonedas
   def index
-    @balance_criptomonedas = BalanceCriptomoneda.all
+    @balance_criptomonedas = BalanceCriptomoneda.all.order('valor DESC')
 
     render json: @balance_criptomonedas
   end
