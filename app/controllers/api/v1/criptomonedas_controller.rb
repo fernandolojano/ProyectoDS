@@ -30,7 +30,8 @@ class CriptomonedasController < ApplicationController
 
   # PATCH/PUT /criptomonedas/1
   def update
-    ValorHistorico.new(valor: @criptomoneda.get_attribute_by_name("valor_actual"), token_criptomoneda: @criptomoneda.get_attribute_by_name("token_criptomoneda"))
+    @valor_historico = ValorHistorico.new(valor: @criptomoneda["valor_actual"], token_criptomoneda: @criptomoneda["token_criptomoneda"])
+    @valor_historico.save
     if @criptomoneda.update(criptomoneda_params)
       render json: @criptomoneda
     else
