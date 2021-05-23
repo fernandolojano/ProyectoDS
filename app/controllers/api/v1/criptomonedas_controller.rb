@@ -2,6 +2,7 @@ module Api
 module V1
   
 class CriptomonedasController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_criptomoneda, only: [:show, :update, :destroy]
 
   # GET /criptomonedas

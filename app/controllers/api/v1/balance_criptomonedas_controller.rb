@@ -2,6 +2,7 @@ module Api
 module V1
 
 class BalanceCriptomonedasController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_balance_criptomoneda, only: [:show, :update, :destroy]
 
   # GET /balance_criptomonedas

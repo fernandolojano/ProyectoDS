@@ -2,6 +2,7 @@ module Api
 module V1
   
 class UsuariosController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_usuario, only: [:show, :update, :destroy]
 
   # GET /usuarios

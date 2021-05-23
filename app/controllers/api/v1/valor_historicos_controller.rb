@@ -2,6 +2,7 @@ module Api
 module V1
 
 class ValorHistoricosController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_valor_historico, only: [:show, :update, :destroy]
 
   # GET /valor_historicos
