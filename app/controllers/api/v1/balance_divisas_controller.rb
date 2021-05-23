@@ -6,7 +6,8 @@ class BalanceDivisasController < ApplicationController
 
   # GET /balance_divisas
   def index
-    @balance_divisas = BalanceDivisa.all.order('valor DESC')
+    @balance_divisas = BalanceDivisa.select("balance_divisas.*, divisas.nombre").joins(\
+    "INNER JOIN divisas ON divisas.token_divisa = balance_divisas.token_divisa").all.order('valor DESC')
 
     render json: @balance_divisas
   end

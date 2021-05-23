@@ -7,7 +7,8 @@ class BalanceCriptomonedasController < ApplicationController
   # GET /balance_criptomonedas
   def index
     @usuarios = Usuario.all
-    @balance_criptomonedas = BalanceCriptomoneda.select("balance_criptomonedas.*, criptomonedas.nombre").joins("INNER JOIN criptomonedas ON criptomonedas.token_criptomoneda = balance_criptomonedas.token_criptomoneda").all
+    @balance_criptomonedas = BalanceCriptomoneda.select("balance_criptomonedas.*, criptomonedas.nombre").joins(\
+    "INNER JOIN criptomonedas ON criptomonedas.token_criptomoneda = balance_criptomonedas.token_criptomoneda").all.order('valor DESC')
 
     render json: @balance_criptomonedas
   end
