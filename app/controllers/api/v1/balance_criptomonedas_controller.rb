@@ -6,7 +6,8 @@ class BalanceCriptomonedasController < ApplicationController
 
   # GET /balance_criptomonedas
   def index
-    @balance_criptomonedas = BalanceCriptomoneda.all.joins("INNER JOIN criptomonedas ON criptomonedas.token_criptomoneda = balance_criptomonedas.token_criptomoneda")
+    @balance_criptomonedas = BalanceCriptomoneda.all.includes(:criptomoneda)
+    #joins("INNER JOIN criptomonedas ON criptomonedas.token_criptomoneda = balance_criptomonedas.token_criptomoneda")
 
     render json: @balance_criptomonedas
   end
