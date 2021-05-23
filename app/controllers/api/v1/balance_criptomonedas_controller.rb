@@ -6,8 +6,9 @@ class BalanceCriptomonedasController < ApplicationController
 
   # GET /balance_criptomonedas
   def index
-    @criptomonedas = Criptomoneda.all
-    @balance_criptomonedas = BalanceCriptomoneda.all.joins(:criptomoneda).order('valor DESC')
+    @balance_criptomonedas = BalanceCriptomoneda.all.joins
+    ("LEFT JOIN criptomonedas ON token_criptomoneda")
+    .order('valor DESC')
 
     render json: @balance_criptomonedas
   end
