@@ -8,7 +8,7 @@ class CriptomonedasController < ApplicationController
   # GET /criptomonedas
   def index
     #@criptomonedas = Criptomoneda.all.order('valor_actual DESC')
-    @criptomonedas = Criptomoneda.find_by_sql(["SELECT criptomonedas.*, vH.valor valor_anterior FROM criptomonedas, valor_historicos vH where criptomonedas.token_criptomoneda = vH.token_criptomoneda AND vH.fecha in (select max(fecha) from valor_historicos vH2 where vH2.token_criptomoneda = criptomonedas.token_criptomoneda)"])
+    @criptomonedas = Criptomoneda.find_by_sql(["SELECT criptomonedas.*, vH.valor valor_anterior FROM criptomonedas, valor_historicos vH WHERE criptomonedas.token_criptomoneda = vH.token_criptomoneda AND vH.fecha in (select max(fecha) FROM valor_historicos vH2 WHERE vH2.token_criptomoneda = criptomonedas.token_criptomoneda) ORDER BY valor_actual DESC"])
 
     render json: @criptomonedas
   end
