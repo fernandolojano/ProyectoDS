@@ -36,6 +36,8 @@ class CriptomonedasController < ApplicationController
 
   # PATCH/PUT /criptomonedas/1 or /criptomonedas/1.json
   def update
+    @valor_historico = ValorHistorico.new(valor: @criptomoneda["valor_actual"], token_criptomoneda: @criptomoneda["token_criptomoneda"])
+    @valor_historico.save
     respond_to do |format|
       if @criptomoneda.update(criptomoneda_params)
         format.html { redirect_to @criptomoneda, notice: "Criptomoneda was successfully updated." }
@@ -46,6 +48,9 @@ class CriptomonedasController < ApplicationController
       end
     end
   end
+
+
+  
 
   # DELETE /criptomonedas/1 or /criptomonedas/1.json
   def destroy

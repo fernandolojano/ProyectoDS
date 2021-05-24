@@ -3,7 +3,7 @@ class ValorHistoricosController < ApplicationController
 
   # GET /valor_historicos or /valor_historicos.json
   def index
-    @valor_historicos = ValorHistorico.all
+    @valor_historicos = ValorHistorico.all.order('fecha DESC')
   end
 
   # GET /valor_historicos/1 or /valor_historicos/1.json
