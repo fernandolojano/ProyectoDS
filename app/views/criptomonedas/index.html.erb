@@ -1,31 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Criptomonedas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Token</th>
-      <th>Nombre</th>
-      <th>Valor actual</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @criptomonedas.each do |criptomoneda| %>
+<div class="tabla">
+  <h1>Criptomonedas</h1>
+  <table>
+    <thead>
       <tr>
-        <td><%= criptomoneda.token_criptomoneda %></td>
-        <td><%= criptomoneda.nombre %></td>
-        <td><%= criptomoneda.valor_actual %></td>
-        <td><%= link_to 'Show', criptomoneda %></td>
-        <td><%= link_to 'Edit', edit_criptomoneda_path(criptomoneda) %></td>
-        <td><%= link_to 'Destroy', criptomoneda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Token</th>
+        <th>Nombre</th>
+        <th>Valor actual</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @criptomonedas.each do |criptomoneda| %>
+        <tr>
+          <td><%= criptomoneda.token_criptomoneda %></td>
+          <td><%= criptomoneda.nombre %></td>
+          <td><%= criptomoneda.valor_actual %></td>
+          <td><%= link_to 'Show', criptomoneda %></td>
+          <td><%= link_to 'Edit', edit_criptomoneda_path(criptomoneda) %></td>
+          <td><%= link_to 'Destroy', criptomoneda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Criptomoneda', new_criptomoneda_path, {:class => "enlace"}%>
+  <br>
+
+  <%= link_to 'New Criptomoneda', new_criptomoneda_path, {:class => "enlace"}%>
+</div>
+
+
+
+

@@ -18,11 +18,37 @@ a {
 
 .enlace {
   background-color:darkgrey;
-  color: red;
+  color: white;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.datos {
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    border: 3px solid green;
+    padding: 10px;
+  }
+
+.datos p {
+    font-size: 200%;
+}
+
+.tabla {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+}
+
+.field {
+    font-size: 200%;
+}
+
+input {
+    font-size: 110%;
 }
 
 

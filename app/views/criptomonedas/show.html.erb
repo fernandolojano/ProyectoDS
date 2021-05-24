@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="datos">
+  <p>
   <strong>Token:</strong>
   <%= @criptomoneda.token_criptomoneda %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Nombre:</strong>
   <%= @criptomoneda.nombre %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Valor actual:</strong>
   <%= @criptomoneda.valor_actual %>
-</p>
+  </p>
 
-<%= link_to 'Edit', edit_criptomoneda_path(@criptomoneda) %> |
-<%= link_to 'Back', criptomonedas_path %>
+  <%= link_to 'Edit', edit_criptomoneda_path(@criptomoneda) %> |
+  <%= link_to 'Back', criptomonedas_path %>
+</div>
+
+
+
