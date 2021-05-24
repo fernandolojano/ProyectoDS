@@ -1,0 +1,28 @@
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:hover {
+    background-color:darkgrey;
+}
+
+a {
+    text-decoration: none;
+}
+
+.enlace {
+  background-color:darkgrey;
+  color: red;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
