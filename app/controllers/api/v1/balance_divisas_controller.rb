@@ -51,7 +51,7 @@ class BalanceDivisasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def balance_divisa_params
-      params.require(:balance_divisa).permit(:valor, :usuario_id, :divisa_id)
+      params.require(:balance_divisa).permit(:valor, :usuario_id, :token_divisa)
     end
 end
 end
