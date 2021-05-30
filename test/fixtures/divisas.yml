@@ -11,3 +11,9 @@ two:
   nombre_divisa: Dolares
   valor: 1
   simbolo: $
+
+three:
+  token_divisa: JPY
+  nombre_divisa: Yen
+  valor: 108.93
+  simbolo: ¥

@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   username: mnc99
   password: 123456789
   nombre: Moises
 
 two:
+  id: 2
   username: miguelangelx72
   password: 123456789
   nombre: Miguelangel

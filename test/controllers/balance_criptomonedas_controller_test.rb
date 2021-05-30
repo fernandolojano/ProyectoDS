@@ -15,9 +15,14 @@ class BalanceCriptomonedasControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create balance_criptomoneda" do
+  test "Caso 1: Fallo al crear un balance criptomoneda con un valor negativo" do
+    post balance_criptomonedas_url, params: { balance_criptomoneda: { token_criptomoneda: @balance_criptomoneda.token_criptomoneda, usuario_id: @balance_criptomoneda.usuario_id, valor: -1 } }
+    assert_response 422
+  end
+
+  test "Caso 2: Fallo al crear un balance criptomoneda con un valor positivo" do
     assert_difference('BalanceCriptomoneda.count') do
-      post balance_criptomonedas_url, params: { balance_criptomoneda: { criptomoneda_id: @balance_criptomoneda.criptomoneda_id, usuario: @balance_criptomoneda.usuario, valor: @balance_criptomoneda.valor } }
+      post balance_criptomonedas_url, params: { balance_criptomoneda: { token_criptomoneda: @balance_criptomoneda.token_criptomoneda, usuario_id: @balance_criptomoneda.usuario_id, valor: 10 } }
     end
 
     assert_redirected_to balance_criptomoneda_url(BalanceCriptomoneda.last)
@@ -34,7 +39,7 @@ class BalanceCriptomonedasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update balance_criptomoneda" do
-    patch balance_criptomoneda_url(@balance_criptomoneda), params: { balance_criptomoneda: { criptomoneda_id: @balance_criptomoneda.criptomoneda_id, usuario: @balance_criptomoneda.usuario, valor: @balance_criptomoneda.valor } }
+    patch balance_criptomoneda_url(@balance_criptomoneda), params: { balance_criptomoneda: { token_criptomoneda: @balance_criptomoneda.token_criptomoneda, usuario_id: @balance_criptomoneda.usuario_id, valor: @balance_criptomoneda.valor } }
     assert_redirected_to balance_criptomoneda_url(@balance_criptomoneda)
   end
 
