@@ -27,7 +27,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: DS14
+  database: DS14_test
+  username: DS14
+  password: DS14_2021
+  host: bioinformatica.ugr.es
+  port: 3306
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
