@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  token: MyString
-  nombre: MyString
+  token_criptomoneda: BTC
+  nombre: Bitcoin
   valor_actual: 1.5
 
 two:
-  token: MyString
-  nombre: MyString
+  token_criptomoneda: ETH
+  nombre: Ethereum
   valor_actual: 1.5

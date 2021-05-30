@@ -2,10 +2,10 @@
 
 one:
   valor: 1.5
-  usuario: 
-  criptomoneda: one
+  usuario_id: 1
+  token_criptomoneda: BTC
 
 two:
   valor: 1.5
-  usuario: 
-  criptomoneda: two
+  usuario_id: 1
+  token_criptomoneda: ETH

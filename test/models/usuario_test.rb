@@ -9,7 +9,18 @@ class UsuarioTest < ActiveSupport::TestCase
    end
 
    test ".length returns a number bigger or equal than 8" do
+
+      # Primer caso
    	usuario = Usuario.new(username:"GFernando", nombre:"Fernando", password:"12")
-   	assert_equal 8,usuario.password.length
+   	assert_equal true,usuario.password.length >= 8
+
+      # Segundo caso
+      usuario = Usuario.new(username:"GFernando", nombre:"Fernando", password:"12")
+   	assert_equal true,usuario.password.length >= 8
+
+      # Tercer caso
+      usuario = Usuario.new(username:"GFernando", nombre:"Fernando", password:"12")
+   	assert_equal true,usuario.password.length >= 8
    end
+
 end

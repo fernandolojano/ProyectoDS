@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  token_divisa: MyString
-  nombre_divisa: MyString
-  valor: 1.5
-  simbolo: MyString
+  token_divisa: EUR
+  nombre_divisa: Euros
+  valor: 0.82
+  simbolo: €
 
 two:
-  token_divisa: MyString
-  nombre_divisa: MyString
-  valor: 1.5
-  simbolo: MyString
+  token_divisa: USD
+  nombre_divisa: Dolares
+  valor: 1
+  simbolo: $
